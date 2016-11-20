@@ -59,6 +59,12 @@ width: 50%;
 
 }
 
+.card img{
+	height:200px;
+	width:150px;
+
+}
+
 
 .clearfix:after {
 	visibility: hidden;

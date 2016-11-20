@@ -16,19 +16,34 @@ var createBoard = function () {
         gameBoard.appendChild(cardElement);
 
         cardElement.addEventListener('click', isTwoCards)
+
+
 }
 }
 createBoard()
 
 function isTwoCards() {
 
-  cardsInPlay.push(this.getAttribute('data-card'));
+cardsInPlay.push(this.getAttribute('data-card'));
+
+   var card = this.getAttribute('data-card');
+
+       if (card == "queen"){
+           this.innerHTML = "<img src='Dama.png'>"
+         }
+           else {
+              this.innerHTML = "<img src='Rei.png'>"
+         }
 
   if (cardsInPlay.length === 2) {
 
     isMatch(cardsInPlay);
 
     cardsInPlay = [];
+    var allCard = document.getElementsByClassName('card')
+      for (var i = 0; i < allCard.length; i++) {
+        allCard [i].innerHTML = ""
+      }
   }
 }
 function isMatch(cardsInPlay) {
